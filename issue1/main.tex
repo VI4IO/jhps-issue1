@@ -1,0 +1,117 @@
+\documentclass{jhps}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{footnote}
+\usepackage{framed}
+\usepackage{pdfpages}
+
+\graphicspath{
+{./assets/}
+}
+
+\makeatletter
+\renewcommand*{\maketitle}{
+  \pagestyle{plain}
+  \thispagestyle{title}
+
+  \ifnum\the\JHPSissue>0
+  \else
+    This manuscript is in the JHPS incubator and has \textbf{not been assigned an issue}. \\[0.2cm]
+    \vspace*{-2cm}
+  \fi
+
+  \vskip 2em%
+  \begin{center}%
+    \begin{tikzpicture}
+      \path [left color = JHPSRed!80, right color = JHPSRed!80]
+        (0,0) rectangle (\hsize,0.25ex);
+    \end{tikzpicture}
+    {\huge \@title \par}%
+    \begin{tikzpicture}
+      \path [left color = JHPSRed!80, right color = JHPSRed!80]
+        (0,0) rectangle (\hsize,0.25ex);
+    \end{tikzpicture}
+
+    \vspace*{-0.25cm}
+
+
+    \vskip 1.2em%
+
+    % authors
+    \def\val{\basiceval{12}
+    %\fbox{ % for debuggin
+    \begin{minipage}[t]{\val cm}
+
+    \end{minipage}
+    }
+    %}
+  \end{center}%
+}
+\makeatother
+
+\JHPSissue{1} 
+\title{The Journal of High-Performance Storage (JHPS) \\ Issue 1 - 2021-01-29}
+%\JHPSdate{2021-01-29}
+
+\begin{document}
+
+\maketitle
+
+\section*{Preface}
+
+The Journal of High-Performance Storage (JHPS) is a new open-access journal edited by storage experts that unite key features of journals fostering openness and trust in storage research. In particular, JHPS offers open reviews, living papers, digital replicability, and free open access.
+
+\medskip
+
+The editing team is proud to announce the publication of the first JHPS issue today representing an important milestone. The first issue contains just one publication, however, the difficult situation in 2020 has impaired the submission numbers. We use this chance to look back at the developments during this turbulent year. While the webpage has been officially started about one year ago in 2020, we knew that the processes and toolchains needed further development and testing. As it turned out, the year was even more challenging than we anticipated, not only for HPC and storage experts but for society as a whole facing the COVID-19 pandemic. For researchers, the pandemic impacted their general research focus, administrative tasks, and their productivity which impacted their publication behavior.
+
+\medskip
+
+In 2020, JHPS managed to review the processes revolving around publication; we improved their quality and increased the capabilities of tools based on the feedback of authors and reviewers. Particularly, we thank the HPC-IODC workshop for the fruitful collaboration with JHPS to test the open review process on the submitted research papers for HPC-IODC. Initially, the Google Docs format was explored for the public review process as its suggestion mode is powerful and allows reviewers to effectively add comments and minor suggestions. However, it turned out, the text setting features provided by Google Docs does not meet our aspirations for high-quality camera-ready publications. Therefore, we developed a LaTeX template and a Google Docs plugin to allow annotations to LaTeX files hosted at GitHub. It turned out that this tooling yields high-productivity while it is inclusive for public reviewers. Additionally, we introduced the JHPS Manuscript Central, a lightweight web-based system that manages the relevant publication workflows for authors and reviewers.
+
+\medskip
+
+Now that we are confident in the effectiveness of the established workflows and tools, our goal is to foster the adoption of the journal and to refine the workflows for digital replicability.
+
+\medskip
+
+We thank all authors, reviewers, and readers.
+
+\bigskip
+
+\setlength\parindent{0pt}
+\hyphenpenalty=10000
+\hbadness=10000
+
+\textbf{Cordially},
+
+\textit{Julian Kunkel, Jean-Thomas Acquaviva, Suren Byna, Adrian Jackson, Ivo Jimenez, Anthony Kougkas, Jay Lofstead, Glenn K. Lockwood, Carlos Maltzahn, George S. Markomanolis, Lingfang Zeng}
+
+\textbf{JHPS Editors}
+
+\newpage
+
+Note that this PDF is a compendium of the articles. 
+It includes the preface and TOC and the version of all articles at release date (newer versions of individual articles may exist due to our “living paper” concept).
+Unfortunately, the embedded links in the PDF of individual articles is lost. 
+We recommend, you visit the webpage of 
+\href{https://jhps.vi4io.org/issue/\the\JHPSissue}{Journal of High-Performance Storage, Issue \the\JHPSissue} to  download the individual and latest version of an article.
+
+\tableofcontents
+
+\label{LastPage}
+
+
+\newpage 
+\clearpage
+\pagestyle{empty}
+
+\phantomsection
+\addcontentsline{toc}{section}{Classifying Temporal Characteristics of Job I/O - Using Machine Learning Techniques}
+\includepdf[pages=-,pagecommand={\pagestyle{empty}}]{jhps-issue1-ClassifyingTemporalCharacteristicsofJobIOUsingMachineLearningTechniques/main.pdf}
+
+
+\end{document}
