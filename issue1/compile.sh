@@ -8,3 +8,5 @@ for X in "jhps-issue1-ClassifyingTemporalCharacteristicsofJobIOUsingMachineLearn
 done
 
 latexmk -pdf main.tex
+
+mv main.pdf JHPS-issue1-compendium.pdf

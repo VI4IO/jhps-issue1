@@ -1,0 +1,108 @@
+\documentclass{jhps}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{footnote}
+\usepackage{framed}
+\usepackage{pdfpages}
+
+\graphicspath{
+{./assets/}
+}
+
+\makeatletter
+\renewcommand*{\maketitle}{
+  \pagestyle{plain}
+  \thispagestyle{title}
+
+  \ifnum\the\JHPSissue>0
+  \else
+    This manuscript is in the JHPS incubator and has \textbf{not been assigned an issue}. \\[0.2cm]
+    \vspace*{-2cm}
+  \fi
+
+  \vskip 2em%
+  \begin{center}%
+    \begin{tikzpicture}
+      \path [left color = JHPSRed!80, right color = JHPSRed!80]
+        (0,0) rectangle (\hsize,0.25ex);
+    \end{tikzpicture}
+    {\huge \@title \par}%
+    \begin{tikzpicture}
+      \path [left color = JHPSRed!80, right color = JHPSRed!80]
+        (0,0) rectangle (\hsize,0.25ex);
+    \end{tikzpicture}
+
+    \vspace*{-0.25cm}
+
+
+    \vskip 1.2em%
+
+    % authors
+    \def\val{\basiceval{12}
+    %\fbox{ % for debuggin
+    \begin{minipage}[t]{\val cm}
+
+    \end{minipage}
+    }
+    %}
+  \end{center}%
+}
+\makeatother
+
+\JHPSissue{2} 
+\title{The Journal of High-Performance Storage (JHPS) \\ Issue 2 - 2021-08-09}
+%\JHPSdate{2021-01-29}
+
+\begin{document}
+
+\maketitle
+
+\section*{Preface}
+
+
+\medskip
+
+We thank all authors, reviewers, and readers.
+
+\bigskip
+
+\setlength\parindent{0pt}
+\hyphenpenalty=10000
+\hbadness=10000
+
+\textbf{Cordially},
+
+\textit{Julian Kunkel, Jean-Thomas Acquaviva, Suren Byna, Adrian Jackson, Ivo Jimenez, Anthony Kougkas, Jay Lofstead, Glenn K. Lockwood, Carlos Maltzahn, George S. Markomanolis, Lingfang Zeng}
+
+\textbf{JHPS Editors}
+
+\newpage
+
+Note that this PDF is a compendium of the articles. It includes the preface and TOC and the
+version of all articles at the release date (newer versions of individual articles may exist due to our
+“living paper” concept). 
+Unfortunately, the embedded links in the PDF of individual articles are lost. 
+We recommend you visit the webpage of the 
+\href{https://jhps.vi4io.org/issue/\the\JHPSissue}{Journal of High-Performance Storage, Issue \the\JHPSissue} to download the individual and latest version of an article.
+
+\tableofcontents
+
+\label{LastPage}
+
+
+\newpage 
+\clearpage
+\pagestyle{empty}
+
+\phantomsection
+\addcontentsline{toc}{section}{Holistic I/O Activity Characterization Through Log Data Analysis of Parallel File Systems and Interconnects}
+\includepdf[pages=-,pagecommand={\pagestyle{empty}}]{jhps-issue2-tsujita/main.pdf}
+
+\phantomsection
+\addcontentsline{toc}{section}{A Workflow for Identifying Jobs with Similar I/O Behavior Utilizing Time Series Analysis}
+\includepdf[pages=-,pagecommand={\pagestyle{empty}}]{jhps-issue2-kunkel/main.pdf}
+
+\end{document}
